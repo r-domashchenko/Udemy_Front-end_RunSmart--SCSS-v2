@@ -50,33 +50,22 @@
             width: 70%;
         }
     }
-
-        .prev,
-        .next {
-            display: none;
-        }
 }
 
 @media (max-width: 426px) {
-    .container {
-        max-width: 320px;
-    }
     .header {
         &__official {
-        display: none;
-    }
-    flex-direction: column;
+            display: none;
+            flex-direction: column;
+        }
         &__phone {
             margin-top: 15px;
         }
     }
-
-
     .promo__icons {
         max-width: 420px;
         flex-wrap: wrap;
     }
-
     .consultation {
         .title {
             &_left {
@@ -86,8 +75,6 @@
             }
         }
     }
-
-
 }
 
 @media (max-width: 320px) {

@@ -1,31 +1,22 @@
-const slider = tns({
-    container: '.carousel__inner',
-    items: 1,
-    slideBy: 'page',
-    autoplay: false,
-    controls: false,
-    nav: false,
-    autoWidth: true,
+// ADD Jquery library
+$(document).ready(function () {
+    // work only after document (HTML page) loaded
+    // method to load SlickSlider
+    $('.carousel__inner').slick({
+        speed: 1000,
+        slidesToShow: 1,
+        variableWidth: true,
+        centerMode: true,
+        adaptiveHeight: false,
 
-    responsive: {
-        640: {
-            edgePadding: 50,
-            gutter: 0,
-            items: 1
-        },
-        700: {
-            gutter: 5
-        },
-        900: {
-            items: 1
-        }
-    }
-});
+        prevArrow: '<button type="button" class="slick-prev"><img src="icons/4-slider/chevron-left-solid.svg"></img></button>',
+        nextArrow: '<button type="button" class="slick-next"><img src="icons/4-slider/chevron-right-solid.svg"></img></button>',
 
-document.querySelector('.prev').addEventListener('click', function () {
-    slider.goTo('prev');
-});
-
-document.querySelector('.next').addEventListener('click', function () {
-    slider.goTo('next');
+        responsive: [{
+            breakpoint: 993,
+            settings: {
+                arrows: false
+            }
+        }]
+    });
 });
