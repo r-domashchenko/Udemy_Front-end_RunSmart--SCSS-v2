@@ -7,9 +7,14 @@
         text-align: left;
         color: #FFFFFF;
     }
+    &_benefits,
+    &_feedback {
+        color: $title-color;
+        text-align: center;
+    }
     &_catalogue {
         text-align: center;
-        color: #0D0D0D;
+        color: $title-color;
         font-size: 40px;
         font-weight: 400;
         line-height: 45px;
