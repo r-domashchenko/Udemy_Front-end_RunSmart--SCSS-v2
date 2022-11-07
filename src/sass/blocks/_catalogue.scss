@@ -5,6 +5,7 @@
         list-style-type: none;
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
 
         // прибираємо зайві відступи (можливі) у стандартного UL
         margin-bottom: 0;

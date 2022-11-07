@@ -3,6 +3,11 @@
         padding: 0 40px;
     }
 
+    .title {
+        font-size: 30px;
+        line-height: 34px;
+    }
+
     .feedback {
         &-card {
             &__container {
@@ -16,6 +21,15 @@
             &__subtitle {
                 text-align: center;
             }
+        }
+    }
+
+    .catalogue {
+        &__tab {
+            margin-top: 10px;
+        }
+        &-item {
+            margin: 10px auto 0 auto;
         }
     }
 }
