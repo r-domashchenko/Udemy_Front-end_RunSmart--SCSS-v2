@@ -1,12 +1,12 @@
-@media (min-width: 767px) {
+@media (max-width: 1010px) {
     .container {
         padding: 0 40px;
     }
 }
-
-@media (max-width: 769px) {
+@media (max-width: 780px) {
     .container {
         max-width: 720px;
+        padding: 0 40px;
     }
     .promo__wrapper {
         text-align: center;
