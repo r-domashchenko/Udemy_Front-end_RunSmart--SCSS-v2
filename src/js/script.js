@@ -121,4 +121,7 @@ $(document).ready(function () {
     validateForm('#consultation-form-1'); //форма в блоці Консультації
     validateForm('#consultation-form form'); //модальна форма по кнопці
     validateForm('#buy-form form'); //модальна форма по кнопці придбати
+
+    $("input[name=phone]").mask("+7(999) 999-9999");
+
 });
