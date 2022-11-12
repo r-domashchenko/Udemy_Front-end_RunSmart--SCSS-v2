@@ -43,6 +43,15 @@
         font-size: 14px;
         line-height: 14px;
     }
+    .error {
+        border: 1px solid red;
+        color: $main-color;
+        text-align: center;
+    }
+    label.error {
+        border: none;
+        margin-bottom: 15px;
+    }
 
 }
 

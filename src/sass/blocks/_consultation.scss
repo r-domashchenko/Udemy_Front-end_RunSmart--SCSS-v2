@@ -10,4 +10,13 @@
         width: 426px;
         margin-top: 20px;
     }
+    .error {
+        border: 1px solid red;
+        text-align: center;
+    }
+    label.error {
+        border: none;
+        color: white;
+        margin-bottom: 15px;
+    }
 }

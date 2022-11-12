@@ -65,11 +65,7 @@ $(document).ready(function () {
     $('[data-modal="consultation"]').on('click', function () {
         $('.overlay, #consultation-form').fadeIn();
     });
-    // Скрипт для закриття модальних вікон (усі Х)
-    $('.modal__close').on('click', function () {
-        $('.overlay, #consultation-form, #buy-form, #thankyou').fadeOut();
-    });
-    
+
     // Скрипт для модальних вікон в каталозі
     // Скрипт, який підставить назву товару в модальну форму замовлення #buy-form
     $('.button_mini').each(function (i) {
@@ -77,6 +73,11 @@ $(document).ready(function () {
             $('#buy-form .modal__descr').text($('.catalogue-item__subtitle').eq(i).text());
             $('.overlay, #buy-form').fadeIn();
         })
+    });
+
+    // Скрипт для закриття модальних вікон (усі Х)
+    $('.modal__close').on('click', function () {
+        $('.overlay, #consultation-form, #buy-form, #thankyou').fadeOut();
     });
 
     // Закриває оверлей при натисканні Escape
@@ -87,10 +88,37 @@ $(document).ready(function () {
     });
     // Закриває оверлей при кліку будь де
     const overlay = document.querySelector('.overlay');
-        overlay.addEventListener('click', (e) => {
-            if (e.target === overlay) {
-                $('.overlay, #consultation-form, #buy-form, #thankyou').fadeOut();
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+            $('.overlay, #consultation-form, #buy-form, #thankyou').fadeOut();
         }
     });
-});
 
+    // Налаштовуємо скрипт на валідацію (jQuerry)
+
+    function validateForm(form) { //декларація своєї функції з налаштуваннями
+        // Налаштування з jQuery Validation Plugin (https://jqueryvalidation.org/)
+        $(form).validate({
+            rules: {
+                name: 'required',
+                phone: 'required',
+                email: {
+                    required: true,
+                    email: true
+                }
+            },
+            messages: {
+                name: 'Пожалуйста, укажите Ваше имя',
+                phone: 'Введите номер телефона',
+                email: {
+                    required: 'Нужно указать адрес електронной почты',
+                    email: 'Введите действующую почту формата email@domain.com'
+                }
+            }
+        });
+    };
+
+    validateForm('#consultation-form-1'); //форма в блоці Консультації
+    validateForm('#consultation-form form'); //модальна форма по кнопці
+    validateForm('#buy-form form'); //модальна форма по кнопці придбати
+});
