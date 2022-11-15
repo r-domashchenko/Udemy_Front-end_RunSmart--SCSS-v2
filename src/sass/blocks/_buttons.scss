@@ -35,4 +35,54 @@
         font-weight: 500;
         font-size: 14px;
     }
+
+    &__pageup {
+        display: none;
+        position: fixed;
+        cursor: pointer;
+        right: 8%;
+        bottom: 40px;
+        width: 45px;
+        height: 45px;
+        padding-top: 18px;
+        border-radius: 20%;
+        &:hover {
+            padding-top: 15px;
+            border-radius: 50%;
+        }
+        &:active {
+            transition: 0.2s padding-top;
+            padding-top: 10px;
+            border-radius: 50%;
+        }
+        .pageup__arrow {
+            position: relative;
+
+            &_left {
+                position: absolute;
+                border-radius: 5px;
+                position: absolute;
+                top: 0;
+                width: 48%;
+                height: 6px;
+                background-color: white;
+
+                left:6px;
+                transform: rotate(-50deg);
+            }
+
+            &_right {
+                position: absolute;
+                border-radius: 5px;
+                position: absolute;
+                top: 0;
+                width: 48%;
+                height: 6px;
+                background-color: white;
+
+                right:6px;
+                transform: rotate(50deg);
+            }
+        }
+    }
 }

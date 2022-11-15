@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <section class="promo">
+    <section class="promo" id="up">
         <div class="container">
             <header class="header">
                 <div href="#" class="header__logo"><img src="img/RunSmart-logo.svg" alt="logo"></div>
@@ -43,7 +43,7 @@
                 <button data-modal="consultation" class="button button_main">заказать кОНСУЛЬТАЦИЮ</button>
                 <div class="promo__link">
                     или
-                    <a href="#">ПЕРЕЙТИ В КАТАЛОГ</a>
+                    <a href="#catalogue">ПЕРЕЙТИ В КАТАЛОГ</a>
                 </div>
 
             </div>
@@ -102,7 +102,7 @@
         </div>
     </section>
 
-    <section class="catalogue">
+    <section class="catalogue" id="catalogue">
         <div class="container">
             <h2 class="title title_catalogue">Каталог пульсометров</h2>
             <!-- Блок з вкладками (кнопки-фільтр) -->
@@ -532,6 +532,13 @@
         </div>
 
     </div>
+
+    <a href="#up" class="button button__pageup" id="button-up">
+        <div class="pageup__arrow">
+            <div class="pageup__arrow_left"></div>
+            <div class="pageup__arrow_right"></div>
+        </div>
+    </a>
 
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>

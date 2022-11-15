@@ -4,3 +4,5 @@
 gulpfile.js
 package-lock.json
 package.json
+dist/mailer/smart.php
+src/mailer/smart.php

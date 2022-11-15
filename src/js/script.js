@@ -124,4 +124,55 @@ $(document).ready(function () {
 
     $("input[name=phone]").mask("+7(999) 999-9999");
 
+    $('form').submit(function (e) {
+        e.preventDefault(); // прибираємо стандартну дію - перезавантаження сторінки
+
+        if (!$(this).valid()) { // якщо не прошла валідація - нічого не робити (фікс бага)
+            return;
+        }
+
+        $.ajax({
+            type: 'POST',
+            url: 'mailer/smart.php',
+            data: $(this).serialize()
+        }).done(function () {
+            $(this).find('input').val('');
+
+            $('#consultation-form, #buy-form').fadeOut();
+            $('.overlay, #thankyou').fadeIn();
+
+            $('form').trigger('reset');
+        });
+        return false;
+    });
+
+    // Плавна прокрутка наверх (кнопка #UP)
+
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 1200) {
+            $('.button__pageup').fadeIn('slow');
+        } else {
+            $('.button__pageup').fadeOut('slow');
+        }
+    });
+
+        // Add smooth scrolling to all links
+        $("a").on('click', function (event) {
+
+            if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+                const hash = this.hash;
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 600, function () {
+
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+            }
+        });
+
 });
