@@ -47,8 +47,11 @@
         padding-top: 18px;
         border-radius: 20%;
         &:hover {
-            padding-top: 15px;
+            padding: 20px 5px 0 5px;
             border-radius: 50%;
+            width: 55px;
+            height: 55px;
+            right: calc(8% - 5px);
         }
         &:active {
             transition: 0.2s padding-top;

@@ -1,12 +1,14 @@
-.benefits{
+.benefits {
     min-height: 475px;
     padding: 75px 0 65px 0;
     background-color: #F6F6F6;
+
     &__wrapper {
         margin-top: 60px;
         display: flex;
         justify-content: space-between;
     }
+
     &__benefit {
         font-weight: 300;
         font-size: 14px;
@@ -14,11 +16,28 @@
         line-height: 18px;
         text-align: center;
         max-width: 280px;
-        
+
+        &:hover {
+            .animated {
+            transition: 1s all;
+                &_cup {
+                    animation: cup 1.5s linear 1;
+                }
+
+                &_heart {
+                    animation: heart-pulse 1s ease-out infinite;
+                }
+
+                &_shoe {
+                    animation: shoe-running 0.7s linear infinite;
+                }
+            }
+        }
+
         a {
             text-decoration: none;
             text-decoration-line: underline;
-            color: #FF0000;
+            color: $main-color;
         }
 
         &_subheader {
